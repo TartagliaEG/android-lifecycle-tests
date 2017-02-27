@@ -11,7 +11,7 @@ public class Utils {
   private static String indent = "";
 
 
-  public static void logBeforeSupper(Object obj) {
+  public static void logBeforeSuper(Object obj) {
     String method = Thread.currentThread().getStackTrace()[3].getMethodName();
     String name = obj instanceof CustomName ? ((CustomName) obj).getCustomName() : obj.getClass().getSimpleName();
     System.out.println(System.currentTimeMillis() + " - " + name + " >>> " + indent + method);
