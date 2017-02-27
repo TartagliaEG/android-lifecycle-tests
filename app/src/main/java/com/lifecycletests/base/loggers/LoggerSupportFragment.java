@@ -11,10 +11,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
-import com.lifecycletests.CustomName;
-import com.lifecycletests.R;
 import com.lifecycletests.utils.Utils;
 
 
@@ -64,11 +61,8 @@ public class LoggerSupportFragment extends Fragment {
   @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
     Utils.logBeforeSupper(this);
-    super.onCreateView(inflater, container, savedInstanceState);
+    View v = super.onCreateView(inflater, container, savedInstanceState);
     Utils.logAfterSuper(this);
-    View v = inflater.inflate(R.layout.fragment_layout, container, false);
-    TextView txt = (TextView) v.findViewById(R.id.fragment_text);
-    txt.setText(this instanceof CustomName ? ((CustomName) this).getCustomName() : getClass().getSimpleName());
     return v;
   }
 

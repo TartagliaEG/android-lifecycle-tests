@@ -58,13 +58,6 @@ public class LoggerSupportActivity extends AppCompatActivity {
   }
 
   @Override
-  public void onEnterAnimationComplete() {
-    Utils.logBeforeSupper(this);
-    super.onEnterAnimationComplete();
-    Utils.logAfterSuper(this);
-  }
-
-  @Override
   protected void onNewIntent(Intent intent) {
     Utils.logBeforeSupper(this);
     super.onNewIntent(intent);
