@@ -23,10 +23,6 @@ import com.lifecycletests.utils.Utils;
 
 public class LoggerFragment extends Fragment {
 
-  public LoggerFragment() {
-    Log.d(LoggerFragment.class.getName(), "LoggerFragment: <<<>>>");
-  }
-
   @Override
   public void onActivityCreated(Bundle savedInstanceState) {
     Utils.logBeforeSupper(this);
