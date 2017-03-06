@@ -4,8 +4,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import com.lifecycletests.base.ABaseActivity;
-import com.lifecycletests.behaviors.dynamic_and_static_fragment.ABSingleFragment;
+import com.lifecycletests.base.android.ABaseActivity;
+import com.lifecycletests.use_case.static_dynamic_fragment.ABStaticDynamicFragment;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
     findViewById(R.id.btn_simple_flow_activity).setOnClickListener(new View.OnClickListener() {
       @Override public void onClick(View v) {
-        startActivity(ABaseActivity.newIntent(that, new ABSingleFragment()));
+        startActivity(ABaseActivity.newIntent(that, new ABStaticDynamicFragment()));
       }
     });
 

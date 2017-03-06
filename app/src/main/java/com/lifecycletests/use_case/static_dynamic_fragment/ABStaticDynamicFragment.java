@@ -1,4 +1,4 @@
-package com.lifecycletests.behaviors.dynamic_and_static_fragment;
+package com.lifecycletests.use_case.static_dynamic_fragment;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -8,27 +8,27 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.lifecycletests.R;
-import com.lifecycletests.base.ABaseActivity;
-import com.lifecycletests.base.ABaseBehavior;
-import com.lifecycletests.base.ABaseFragment;
+import com.lifecycletests.base.android.ABaseActivity;
+import com.lifecycletests.base.android.ABaseBehavior;
+import com.lifecycletests.base.android.ABaseFragment;
 import com.lifecycletests.utils.DialogAndResultButtons;
 
 
-public class ABSingleFragment extends ABaseBehavior {
+public class ABStaticDynamicFragment extends ABaseBehavior {
 
   @Override
   public void onActivityCreate(ABaseActivity activity, Bundle savedInstanceState) {
-    activity.setContentView(R.layout.activity_fragment);
+    activity.setContentView(R.layout.dynamic_and_static_fragment);
 
     new DialogAndResultButtons()
       .configureDialogActivity(activity, R.id.btn_dialog)
       .configureResultActivity(activity, R.id.btn_activity);
 
-    Fragment f = activity.getFragmentManager().findFragmentByTag("TAG1");
+    Fragment f = activity.getFragmentManager().findFragmentById(R.id.fragment_container);
     if (f == null) {
       activity.getFragmentManager()
         .beginTransaction()
-        .add(ABaseFragment.newInstance("Dynamic", activity, this), "TAG1")
+        .replace(R.id.fragment_container, ABaseFragment.newInstance("Dynamic", activity, this))
         .commit();
     }
   }

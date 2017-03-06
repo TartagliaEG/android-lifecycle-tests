@@ -1,20 +1,16 @@
-package com.lifecycletests.base;
+package com.lifecycletests.base.android;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.lifecycletests.base.loggers.LoggerActivity;
-import com.lifecycletests.behaviors.Behavior;
+import com.lifecycletests.base.Behavior;
 
 public class ABaseActivity extends LoggerActivity {
   private String mName;
 
   public static Intent newIntent(Context context, Behavior<ABaseActivity, ABaseFragment> behavior) {
-    Intent intent = new Intent(context, ABaseActivity.class);
-    intent.putExtra(Behavior.EXTRA_ARGS_KEY, behavior);
-    intent.putExtra(Behavior.EXTRA_ARGS_NAME, behavior.getActivityLogLabel());
-    return intent;
+    return behavior.onNewActivityInstance(context);
   }
 
   @Override

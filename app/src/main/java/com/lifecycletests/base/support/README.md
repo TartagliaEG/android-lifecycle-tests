@@ -1,0 +1,1 @@
+This package contains the base classes used to create use-cases with the support library.

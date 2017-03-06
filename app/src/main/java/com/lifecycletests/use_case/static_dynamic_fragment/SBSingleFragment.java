@@ -1,4 +1,4 @@
-package com.lifecycletests.behaviors.dynamic_and_static_fragment;
+package com.lifecycletests.use_case.static_dynamic_fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,9 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.lifecycletests.R;
-import com.lifecycletests.base.SBaseActivity;
-import com.lifecycletests.base.SBaseBehavior;
-import com.lifecycletests.base.SBaseFragment;
+import com.lifecycletests.base.support.SBaseActivity;
+import com.lifecycletests.base.support.SBaseBehavior;
+import com.lifecycletests.base.support.SBaseFragment;
 import com.lifecycletests.utils.DialogAndResultButtons;
 
 

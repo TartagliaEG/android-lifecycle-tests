@@ -13,10 +13,10 @@
         >
 
         <activity
-            android:name=".base.ABaseActivity">
+            android:name=".base.android.ABaseActivity">
         </activity>
         <activity
-            android:name=".base.SBaseActivity"
+            android:name=".base.support.SBaseActivity"
             android:theme="@style/Theme.AppCompat.DayNight">
         </activity>
 

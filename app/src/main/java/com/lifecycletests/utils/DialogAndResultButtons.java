@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.support.annotation.IdRes;
 import android.view.View;
 
+import com.lifecycletests.base.Behavior;
+
 /**
  * Created by erik on 05/03/17.
  * ...
@@ -15,7 +17,7 @@ public class DialogAndResultButtons {
   public DialogAndResultButtons configureResultActivity(final Activity activity, @IdRes int resultActivityId) {
     activity.findViewById(resultActivityId).setOnClickListener(new View.OnClickListener() {
       @Override public void onClick(View v) {
-        activity.startActivityForResult(new Intent(activity, ResultActivity.class), Utils.REQUEST_CODE);
+        activity.startActivityForResult(new Intent(activity, ResultActivity.class), Behavior.DEFAULT_REQUEST_CODE);
       }
     });
     return this;
@@ -24,7 +26,7 @@ public class DialogAndResultButtons {
   public DialogAndResultButtons configureDialogActivity(final Activity activity, @IdRes int dialogActivityId) {
     activity.findViewById(dialogActivityId).setOnClickListener(new View.OnClickListener() {
       @Override public void onClick(View v) {
-        activity.startActivityForResult(new Intent(activity, DialogActivity.class), Utils.REQUEST_CODE);
+        activity.startActivityForResult(new Intent(activity, DialogActivity.class), Behavior.DEFAULT_REQUEST_CODE);
       }
     });
     return this;

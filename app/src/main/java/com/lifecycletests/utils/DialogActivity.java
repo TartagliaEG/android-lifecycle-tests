@@ -5,7 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.lifecycletests.R;
-import com.lifecycletests.base.loggers.LoggerActivity;
+import com.lifecycletests.base.Behavior;
+import com.lifecycletests.base.android.LoggerActivity;
 
 /**
  * An empty dialog overlay used to pause the current visible activity.
@@ -25,7 +26,7 @@ public class DialogActivity extends LoggerActivity {
       @Override public void onClick(View v) {
 //        setResult(Activity.RESULT_CANCELED);
 //        finish();
-        startActivityForResult(new Intent(DialogActivity.this, ResultActivity.class), Utils.REQUEST_CODE);
+        startActivityForResult(new Intent(DialogActivity.this, ResultActivity.class), Behavior.DEFAULT_REQUEST_CODE);
       }
     });
 

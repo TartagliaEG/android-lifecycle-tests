@@ -1,18 +1,18 @@
-package com.lifecycletests.base;
+package com.lifecycletests.base.android;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.lifecycletests.behaviors.Behavior;
+import com.lifecycletests.base.Behavior;
 
 public abstract class ABaseBehavior implements Behavior<ABaseActivity, ABaseFragment> {
 
   @Override
-  public Intent onNewActivityInstance(String name, Context context) {
+  public Intent onNewActivityInstance(Context context) {
     Intent intent = new Intent(context, ABaseActivity.class);
     intent.putExtra(EXTRA_ARGS_KEY, this);
-    intent.putExtra(EXTRA_ARGS_NAME, name);
+    intent.putExtra(EXTRA_ARGS_NAME, getActivityLogLabel());
     return intent;
   }
 

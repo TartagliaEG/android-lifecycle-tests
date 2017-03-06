@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.lifecycletests.R;
-import com.lifecycletests.base.loggers.LoggerActivity;
+import com.lifecycletests.base.android.LoggerActivity;
 
 
 /**

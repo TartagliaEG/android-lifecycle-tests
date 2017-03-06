@@ -10,13 +10,14 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.lifecycletests.base.loggers.LoggerActivity">
+    tools:context="com.lifecycletests.base.android.LoggerActivity">
 
     <Button
         android:id="@+id/btn_dialog"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Show Dialog"/>
+
     <Button
         android:id="@+id/btn_activity"
         android:layout_width="match_parent"
@@ -27,5 +28,11 @@
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
         android:layout_height="100dp"/>
-    
+
+    <fragment
+        android:id="@+id/static_fragment"
+        android:name="com.lifecycletests.base.android.AStaticFragment"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        />
 </LinearLayout>
