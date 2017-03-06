@@ -11,10 +11,11 @@ import android.view.MenuItem;
 
 import com.lifecycletests.utils.Utils;
 
-public class LoggerActivity extends Activity {
+public abstract class LoggerActivity extends Activity implements LogLabel {
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
+    Utils.dispatchMessageToMainThread("On Create Logger Activity");
     Utils.logBeforeSuper(this);
     super.onCreate(savedInstanceState);
     Utils.logAfterSuper(this);
@@ -43,6 +44,7 @@ public class LoggerActivity extends Activity {
 
   @Override
   public boolean onCreateOptionsMenu(Menu menu) {
+    Utils.dispatchMessageToMainThread("On Create Options Menu Logger Activity");
     Utils.logBeforeSuper(this);
     boolean b = super.onCreateOptionsMenu(menu);
     Utils.logAfterSuper(this);
@@ -53,6 +55,18 @@ public class LoggerActivity extends Activity {
   protected void onDestroy() {
     Utils.logBeforeSuper(this);
     super.onDestroy();
+    Utils.logAfterSuper(this);
+  }
+
+  @Override public void startActivityForResult(Intent intent, int requestCode) {
+    Utils.logBeforeSuper(this);
+    super.startActivityForResult(intent, requestCode);
+    Utils.logAfterSuper(this);
+  }
+
+  @Override public void startActivity(Intent intent) {
+    Utils.logBeforeSuper(this);
+    super.startActivity(intent);
     Utils.logAfterSuper(this);
   }
 
@@ -108,6 +122,7 @@ public class LoggerActivity extends Activity {
 
   @Override
   public boolean onPrepareOptionsMenu(Menu menu) {
+    Utils.dispatchMessageToMainThread("Prepare option menu Logger Activity");
     Utils.logBeforeSuper(this);
     boolean b = super.onPrepareOptionsMenu(menu);
     Utils.logAfterSuper(this);

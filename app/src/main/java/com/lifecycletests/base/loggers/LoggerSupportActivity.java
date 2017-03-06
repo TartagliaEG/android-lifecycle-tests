@@ -12,10 +12,11 @@ import android.view.MenuItem;
 import com.lifecycletests.utils.Utils;
 
 
-public class LoggerSupportActivity extends AppCompatActivity {
+public abstract class LoggerSupportActivity extends AppCompatActivity  implements LogLabel {
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
+    Utils.dispatchMessageToMainThread("On Create Support Logger Activity");
     Utils.logBeforeSuper(this);
     super.onCreate(savedInstanceState);
     Utils.logAfterSuper(this);
@@ -37,17 +38,29 @@ public class LoggerSupportActivity extends AppCompatActivity {
 
   @Override
   public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
+    Utils.dispatchMessageToMainThread("On Create Support Logger Activity");
     Utils.logBeforeSuper(this);
     super.onCreate(savedInstanceState, persistentState);
     Utils.logAfterSuper(this);
   }
 
   @Override
-  public boolean onCreateOptionsMenu(Menu menu) {
+  public boolean onCreateOptionsMenu(final Menu menu) {
+    Utils.dispatchMessageToMainThread("On Create Options Menu Support Logger Activity");
     Utils.logBeforeSuper(this);
     boolean b = super.onCreateOptionsMenu(menu);
     Utils.logAfterSuper(this);
     return b;
+
+//    return Utils.sleep(2000, new Utils.AfterSleep<Boolean>() {
+//      @Override public Boolean run() {
+//        Utils.logBeforeSuper(this);
+//        boolean b = LoggerSupportActivity.super.onCreateOptionsMenu(menu);
+//        Utils.logAfterSuper(this);
+//        return b;
+//      }
+//    });
+
   }
 
   @Override
@@ -173,6 +186,7 @@ public class LoggerSupportActivity extends AppCompatActivity {
 
   @Override
   protected void onStop() {
+    Utils.dispatchMessageToMainThread("STOP Support Logger Activity");
     Utils.logBeforeSuper(this);
     super.onStop();
     Utils.logAfterSuper(this);

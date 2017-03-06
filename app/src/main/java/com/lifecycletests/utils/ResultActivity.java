@@ -13,6 +13,10 @@ import com.lifecycletests.base.loggers.LoggerActivity;
  */
 public class ResultActivity extends LoggerActivity {
 
+  @Override public String getLogLabel() {
+    return getClass().getName();
+  }
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -24,4 +28,5 @@ public class ResultActivity extends LoggerActivity {
       }
     });
   }
+
 }

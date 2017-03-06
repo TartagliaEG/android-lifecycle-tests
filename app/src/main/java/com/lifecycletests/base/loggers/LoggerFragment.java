@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -17,7 +18,25 @@ import android.view.ViewGroup;
 import com.lifecycletests.utils.Utils;
 
 
-public class LoggerFragment extends Fragment {
+public abstract class LoggerFragment extends Fragment implements LogLabel {
+  @Override
+  public void onInflate(Activity activity, AttributeSet attrs, Bundle savedInstanceState) {
+    Utils.logBeforeSuper(this);
+    super.onInflate(activity, attrs, savedInstanceState);
+    Utils.logAfterSuper(this);
+  }
+
+  @Override public void onInflate(AttributeSet attrs, Bundle savedInstanceState) {
+    Utils.logBeforeSuper(this);
+    super.onInflate(attrs, savedInstanceState);
+    Utils.logAfterSuper(this);
+  }
+
+  @Override public void onInflate(Context context, AttributeSet attrs, Bundle savedInstanceState) {
+    Utils.logBeforeSuper(this);
+    super.onInflate(context, attrs, savedInstanceState);
+    Utils.logAfterSuper(this);
+  }
 
   @Override
   public void onActivityCreated(Bundle savedInstanceState) {
