@@ -18,7 +18,7 @@ import android.view.ViewGroup;
 import com.lifecycletests.base.Logger;
 
 
-public abstract class LoggerFragment extends Fragment implements Logger.LogLabel {
+public abstract class ALoggerFragment extends Fragment implements Logger.LogLabel {
 
   @Override public void onInflate(Context context, AttributeSet attrs, Bundle savedInstanceState) {
     Logger.logBeforeSuper(this);

@@ -27,7 +27,7 @@ public class Logger {
   private static final boolean ENQUEUE_LOG_MESSAGE_AFTER_SUPER = false;
 
   // Specify the length of the label printed by the Logger.
-  private static final int LOG_LABEL_LENGTH = 15;
+  private static final int LOG_LABEL_LENGTH = 35;
 
 
   private static String indent = "";

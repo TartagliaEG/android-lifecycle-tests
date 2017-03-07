@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 
 import com.lifecycletests.base.Behavior;
 
-public class ABaseFragment extends LoggerFragment {
+public class ABaseFragment extends ALoggerFragment {
   private String mName;
 
   public static ABaseFragment newInstance(String name, Context context, Behavior<ABaseActivity, ABaseFragment> behavior) {

@@ -17,6 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Show Dialog"/>
+
     <Button
         android:id="@+id/btn_activity"
         android:layout_width="match_parent"
@@ -26,5 +27,17 @@
     <FrameLayout
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
-        android:layout_height="100dp"/>
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        android:background="#ddd"
+        />
+
+    <fragment
+        android:id="@+id/static_fragment"
+        android:name="com.lifecycletests.base.support.SStaticFragment"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        android:background="#ddd"
+        />
 </LinearLayout>

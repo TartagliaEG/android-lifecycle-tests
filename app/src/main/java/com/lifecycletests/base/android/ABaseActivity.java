@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import com.lifecycletests.base.Behavior;
 
-public class ABaseActivity extends LoggerActivity {
+public class ABaseActivity extends ALoggerActivity {
   private String mName;
 
   public static Intent newIntent(Context context, Behavior<ABaseActivity, ABaseFragment> behavior) {

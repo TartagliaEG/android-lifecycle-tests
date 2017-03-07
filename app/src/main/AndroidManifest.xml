@@ -21,27 +21,19 @@
         </activity>
 
         <activity
-            android:name=".retained.RetainedFlowActivity">
+            android:name=".commons.ADialogActivity"
+            android:theme="@android:style/Theme.Dialog">
         </activity>
         <activity
-            android:name=".retained.SRetainedFlowActivity"
-            android:theme="@style/Theme.AppCompat.DayNight">
-        </activity>
-
-        <activity
-            android:name=".backstack.BackStackFlowActivity">
-        </activity>
-        <activity
-            android:name=".backstack.SBackStackFlowActivity"
-            android:theme="@style/Theme.AppCompat.DayNight">
-        </activity>
-
-        <activity
-            android:name=".utils.ResultActivity">
-        </activity>
-        <activity
-            android:name=".utils.DialogActivity"
+            android:name=".commons.SDialogActivity"
             android:theme="@style/Theme.AppCompat.Dialog">
+        </activity>
+        <activity
+            android:name=".commons.AResultActivity">
+        </activity>
+        <activity
+            android:name=".commons.SResultActivity"
+            android:theme="@style/Theme.AppCompat.DayNight">
         </activity>
 
         <activity

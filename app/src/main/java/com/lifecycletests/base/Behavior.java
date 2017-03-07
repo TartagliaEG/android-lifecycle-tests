@@ -26,7 +26,7 @@ import java.io.Serializable;
 public interface Behavior<TActivity, TFragment> extends Serializable {
   String EXTRA_ARGS_KEY = Behavior.class.getName() + ".KEY";
   String EXTRA_ARGS_NAME = Behavior.class.getName() + ".NAME";
-  int DEFAULT_REQUEST_CODE = 111;
+  int DEFAULT_REQUEST_CODE = 1777;
 
   TFragment onNewFragmentInstance(String name, Context context);
 

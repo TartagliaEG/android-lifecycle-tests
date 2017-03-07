@@ -16,6 +16,6 @@ public class SStaticFragment extends SLoggerFragment {
 
   @Override
   public String getLogLabel() {
-    return SStaticFragment.class.getSimpleName();
+    return "[S][F] static";
   }
 }

@@ -27,29 +27,6 @@
             android:layout_height="wrap_content"
             android:text="Simple Flow Activity (Support)"/>
 
-        <Button
-            android:id="@+id/btn_retained_flow_activity"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Retained Flow Activity"/>
-
-        <Button
-            android:id="@+id/btn_retained_flow_support_activity"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Retained flow Activity (Support)"/>
-
-        <Button
-            android:id="@+id/btn_back_stack_flow_activity"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Back Stack flow Activity"/>
-
-        <Button
-            android:id="@+id/btn_back_stack_support_activity"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Back Stack flow Activity (Support)"/>
     </LinearLayout>
 
 </ScrollView>

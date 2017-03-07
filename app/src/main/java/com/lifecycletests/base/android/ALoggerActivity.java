@@ -11,7 +11,7 @@ import android.view.MenuItem;
 
 import com.lifecycletests.base.Logger;
 
-public abstract class LoggerActivity extends Activity implements Logger.LogLabel {
+public abstract class ALoggerActivity extends Activity implements Logger.LogLabel {
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {

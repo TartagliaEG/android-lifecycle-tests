@@ -1,4 +1,4 @@
-package com.lifecycletests.use_case.static_dynamic_fragment;
+package com.lifecycletests.use_case.main_flow_all_fragment_types;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,38 +8,47 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.lifecycletests.R;
+import com.lifecycletests.base.Behavior;
 import com.lifecycletests.base.support.SBaseActivity;
 import com.lifecycletests.base.support.SBaseBehavior;
 import com.lifecycletests.base.support.SBaseFragment;
-import com.lifecycletests.utils.DialogAndResultButtons;
+import com.lifecycletests.commons.DialogAndResultButtons;
+import com.lifecycletests.commons.SDialogActivity;
+import com.lifecycletests.commons.SResultActivity;
 
 
-public class SBSingleFragment extends SBaseBehavior {
+public class SBAllFragmentTypes extends SBaseBehavior {
 
   @Override
   public void onActivityCreate(SBaseActivity activity, Bundle savedInstanceState) {
-    activity.setContentView(R.layout.activity_fragment);
+    activity.setContentView(R.layout.s_all_fragment_types);
 
     new DialogAndResultButtons()
-      .configureDialogActivity(activity, R.id.btn_dialog)
-      .configureResultActivity(activity, R.id.btn_activity);
+      .configureDialogActivity(activity, R.id.btn_dialog, SDialogActivity.class)
+      .configureResultActivity(activity, R.id.btn_activity, SResultActivity.class);
 
     Fragment f = activity.getSupportFragmentManager().findFragmentById(R.id.fragment_container);
     if (f == null) {
       activity.getSupportFragmentManager()
         .beginTransaction()
-        .replace(R.id.fragment_container, SBaseFragment.newInstance("dynamic", activity, this))
+        .replace(R.id.fragment_container, SBaseFragment.newInstance("[S][F] dynamic", activity, this))
+        .add(SBaseFragment.newInstance("[S][F] retained", activity, this), "TAG")
         .commit();
     }
+
   }
 
   @Override
   public View onFragmentCreateView(SBaseFragment fragment, LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
+    if ("[S][F] retained".equals(fragment.getArguments().getString(Behavior.EXTRA_ARGS_NAME))) {
+      fragment.setHasOptionsMenu(false);
+      return null;
+    }
     fragment.setHasOptionsMenu(true);
     return inflater.inflate(R.layout.fragment_layout, container, false);
   }
 
   @Override public String getActivityLogLabel() {
-    return "SSingleFragment";
+    return "[S][A] s_all_fragment_types";
   }
 }

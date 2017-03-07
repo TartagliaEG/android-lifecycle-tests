@@ -5,7 +5,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.lifecycletests.base.android.ABaseActivity;
-import com.lifecycletests.use_case.static_dynamic_fragment.ABStaticDynamicFragment;
+import com.lifecycletests.base.support.SBaseActivity;
+import com.lifecycletests.use_case.main_flow_all_fragment_types.ABAllFragmentTypes;
+import com.lifecycletests.use_case.main_flow_all_fragment_types.SBAllFragmentTypes;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -18,9 +20,16 @@ public class MainActivity extends AppCompatActivity {
 
     findViewById(R.id.btn_simple_flow_activity).setOnClickListener(new View.OnClickListener() {
       @Override public void onClick(View v) {
-        startActivity(ABaseActivity.newIntent(that, new ABStaticDynamicFragment()));
+        startActivity(ABaseActivity.newIntent(that, new ABAllFragmentTypes()));
       }
     });
+
+    findViewById(R.id.btn_simple_flow_support_activity).setOnClickListener(new View.OnClickListener() {
+      @Override public void onClick(View v) {
+        startActivity(SBaseActivity.newIntent(that, new SBAllFragmentTypes()));
+      }
+    });
+
 
 //    findViewById(R.id.btn_simple_flow_support_activity).setOnClickListener(new View.OnClickListener() {
 //      @Override public void onClick(View v) {

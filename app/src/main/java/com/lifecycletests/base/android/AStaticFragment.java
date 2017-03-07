@@ -12,7 +12,7 @@ import com.lifecycletests.R;
  *
  * This fragment is supposed to be put directly on the layout file.
  */
-public class AStaticFragment extends LoggerFragment {
+public class AStaticFragment extends ALoggerFragment {
 
   @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -22,6 +22,6 @@ public class AStaticFragment extends LoggerFragment {
 
   @Override
   public String getLogLabel() {
-    return AStaticFragment.class.getSimpleName();
+    return "[A][F] static";
   }
 }

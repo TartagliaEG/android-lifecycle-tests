@@ -1,20 +1,20 @@
-package com.lifecycletests.utils;
+package com.lifecycletests.commons;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 
 import com.lifecycletests.R;
-import com.lifecycletests.base.android.LoggerActivity;
+import com.lifecycletests.base.support.SLoggerActivity;
 
 
 /**
  * Just exposes a button that send the result back to the parent activity.
  */
-public class ResultActivity extends LoggerActivity {
+public class SResultActivity extends SLoggerActivity {
 
   @Override public String getLogLabel() {
-    return getClass().getName();
+    return "[S][A] utils_result_activity";
   }
 
   @Override

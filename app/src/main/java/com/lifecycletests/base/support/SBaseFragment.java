@@ -25,7 +25,9 @@ public class SBaseFragment extends SLoggerFragment {
 
   @Nullable @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-    Behavior<SBaseActivity, SBaseFragment> behavior = getArguments().getParcelable(Behavior.EXTRA_ARGS_KEY);
+    @SuppressWarnings("unchecked")
+    Behavior<SBaseActivity, SBaseFragment> behavior =
+      (Behavior<SBaseActivity, SBaseFragment>) getArguments().getSerializable(Behavior.EXTRA_ARGS_KEY);
 
     super.onCreateView(inflater, container, savedInstanceState);
 

@@ -15,7 +15,9 @@ public class SBaseActivity extends SLoggerActivity {
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
-    Behavior<SBaseActivity, SBaseFragment> behavior = getIntent().getParcelableExtra(Behavior.EXTRA_ARGS_KEY);
+    @SuppressWarnings("unchecked")
+    Behavior<SBaseActivity, SBaseFragment> behavior =
+      (Behavior<SBaseActivity, SBaseFragment>) getIntent().getSerializableExtra(Behavior.EXTRA_ARGS_KEY);
     mName = getIntent().getStringExtra(Behavior.EXTRA_ARGS_NAME);
 
     super.onCreate(savedInstanceState);
