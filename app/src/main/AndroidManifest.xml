@@ -26,7 +26,8 @@
         </activity>
         <activity
             android:name=".commons.SDialogActivity"
-            android:theme="@style/Theme.AppCompat.Dialog">
+            android:theme="@style/Theme.AppCompat.Dialog"
+            >
         </activity>
         <activity
             android:name=".commons.AResultActivity">
@@ -34,6 +35,8 @@
         <activity
             android:name=".commons.SResultActivity"
             android:theme="@style/Theme.AppCompat.DayNight">
+            <!--android:theme="@style/Dialog">-->
+
         </activity>
 
         <activity
