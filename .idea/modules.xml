@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/android-lifecycle-tests.iml" filepath="$PROJECT_DIR$/android-lifecycle-tests.iml" />
+      <module fileurl="file://C:\Users\tartagle\dev\android-lifecycle-tests\android-lifecycle-tests.iml" filepath="C:\Users\tartagle\dev\android-lifecycle-tests\android-lifecycle-tests.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\tartagle\dev\android-lifecycle-tests\app\app.iml" filepath="C:\Users\tartagle\dev\android-lifecycle-tests\app\app.iml" />
     </modules>
   </component>
 </project>

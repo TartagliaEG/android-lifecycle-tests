@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
 //        startActivity(new Intent(MainActivity.this, RetainedFlowActivity.class));
 //      }
 //    });
-//
+
 //    findViewById(R.id.btn_retained_flow_support_activity).setOnClickListener(new View.OnClickListener() {
 //      @Override public void onClick(View v) {
 //        startActivity(new Intent(MainActivity.this, SRetainedFlowActivity.class));
@@ -60,7 +60,5 @@ public class MainActivity extends AppCompatActivity {
 //        startActivity(new Intent(MainActivity.this, SBackStackFlowActivity.class));
 //      }
 //    });
-
-
   }
 }
